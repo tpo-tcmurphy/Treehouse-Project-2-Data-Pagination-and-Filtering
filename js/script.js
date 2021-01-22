@@ -13,14 +13,14 @@ const itemsPerPage = 9;
          let endIndex = page * itemsPerPage;
          let studentList = document.querySelector('.student-list'); //Selects the UL element with a class of student-list and assigns its value to a variable.
          studentList.innerHTML = ''; // sets the innerHTML property of the variable you just created to an empty string 
-         for ( let i = 0; i < list.length; i++ ) {
+         for ( let i = 0; i < list.length; i++ ) { //This loop Puts the Student information on the page
             if ( i >= startIndex && i < endIndex) {
                let studentItem = list[i];
                   studentList.insertAdjacentHTML( 'beforeend', `
                   <li class="student-item cf">
                      <div class="student-details">
                            <img class="avatar" src=${studentItem.picture.thumbnail} alt="Profile Picture">
-                        <h3>${studentItem.name.title} ${studentItem.name.first} ${studentItem.name.last}</h3>
+                        <h3>${studentItem.name.title}. ${studentItem.name.first} ${studentItem.name.last}</h3>
                         <span class="email">${studentItem.email}</span>
                      </div>
                      <div class="joined-details">
@@ -45,17 +45,15 @@ const itemsPerPage = 9;
       let numOfPages = Math.ceil( list.length / itemsPerPage );  // creates a variable to calculate the number of pages needed
       const linkList = document.querySelector('.link-list'); // selects the element with a class of `link-list` and will assign it to a variable
       linkList.innerHTML = '';  // sets the innerHTML property of the variable you just created to an empty string 
-     // loop over the number of pages needed
+     
      let button = '';
       for (let i = 1; i <= numOfPages; i++) {
-       // creates the elements needed to display the pagination button
        button = `
          <li>
             <button type="button">${i}</button>
          </li>
          `;
-       // insert the above elements
-       linkList.insertAdjacentHTML('beforeend', button);
+         linkList.insertAdjacentHTML('beforeend', button);  // inserts the above elements
       };
       
       let activeButton = linkList.querySelector('button');   
