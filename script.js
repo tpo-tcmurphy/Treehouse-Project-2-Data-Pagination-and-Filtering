@@ -2,7 +2,7 @@
 Treehouse Techdegree:
 FSJS Project 2 - Data Pagination and Filtering
 */
-document.addEventListener( 'DOMContentLoaded', () => {
+///document.addEventListener( 'DOMContentLoaded', () => {
 
       const studentListUl = document.querySelectorAll('.student-list')[0];
       const studentListLi = studentListUl.children;
@@ -66,5 +66,5 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
       appendPageLinks();
 
-   });
+   // });
 
